@@ -12,7 +12,9 @@ const createContactService = async (data: IContactData): Promise<IContact> => {
   const user = await userRepository.findOneBy({ id: userId });
   const contact = contactRepository.create(contactData);
 
-  await contactRepository.save({ ...contact, user: user });
+  console.log(contact);
+  contact.user = user;
+  await contactRepository.save(contact);
 
   return contact;
 };

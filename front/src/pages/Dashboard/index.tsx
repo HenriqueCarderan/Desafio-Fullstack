@@ -20,6 +20,7 @@ const Dashboard = () => {
   } = useContext(ContactContext);
 
   const eventModal = (contact: IContacts) => {
+    console.log(`eventmodal`, contact);
     setContactName(contact.name);
     setContactId(contact.id);
     setEditModal(true);
@@ -56,7 +57,6 @@ const Dashboard = () => {
                   <ul>
                     {contacts.length !== 0 ? (
                       contacts.map((contact) => {
-                        console.log(contact);
                         return (
                           <li
                             key={contact.email}

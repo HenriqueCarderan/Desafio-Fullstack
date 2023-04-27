@@ -95,11 +95,9 @@ function UserProvider({ children }: IUserProvider) {
     api
       .post("/login", data)
       .then((res) => {
-        console.log(res.data);
         window.localStorage.clear();
         window.localStorage.setItem("@TOKEN", res.data.token);
         window.localStorage.setItem("@USERID", res.data.user.id);
-        console.log(res);
         setUser(res.data.user);
 
         sortContacts = res.data.user.contacts.sort(function (a, b) {

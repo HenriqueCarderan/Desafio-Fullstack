@@ -51,6 +51,7 @@ function ContactProvider({ children }: IContactProvider) {
       })
       .then((res) => {
         setContacts([...contacts, res.data]);
+        console.log(res.data);
         toast.success("Contato adicionado com sucesso");
         setAddModal(false);
       })
