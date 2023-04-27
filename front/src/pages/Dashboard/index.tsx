@@ -6,6 +6,7 @@ import { IContacts, UserContext } from "../../contexts/UserContext";
 import AddModal from "../../components/modals/addModal";
 import { ContactContext } from "../../contexts/ContactContext";
 import EditModal from "../../components/modals/editModal";
+import { IconContext } from "react-icons/lib";
 
 const Dashboard = () => {
   const { handleLogout, user, contacts } = useContext(UserContext);
@@ -51,7 +52,11 @@ const Dashboard = () => {
                   <div className="tecsHeader">
                     <h4>Contatos</h4>
                     <button onClick={() => setAddModal(true)}>
-                      <GrFormAdd></GrFormAdd>
+                      <IconContext.Provider value={{ size: "30px" }}>
+                        <div>
+                          <GrFormAdd />
+                        </div>
+                      </IconContext.Provider>
                     </button>
                   </div>
                   <ul>
